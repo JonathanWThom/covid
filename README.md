@@ -7,7 +7,7 @@ JSON wrapper around [Johns Hopkins dataset](https://github.com/CSSEGISandData/CO
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'covid'
+gem "covid"
 ```
 
 And then execute:
@@ -21,15 +21,9 @@ Or install it yourself as:
 ## Usage
 
 ```
-$ puts Covid::Nineteen.confirmed
-```
-
-```
-$ puts Covid::Nineteen.deaths
-```
-
-```
-$ puts Covid::Nineteen.recovered
+$ Covid::Nineteen.confirmed
+$ Covid::Nineteen.deaths
+$ Covid::Nineteen.recovered
 ```
 
 

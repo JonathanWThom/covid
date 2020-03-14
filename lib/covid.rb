@@ -18,7 +18,7 @@ module Covid
     end
 
     def run
-      csv.map(&:to_h).to_json
+      parsed_json
     end
 
     def self.confirmed
@@ -39,8 +39,16 @@ module Covid
       CSV.parse(response, headers: true)
     end
 
+    def raw
+      csv.map(&:to_h).to_json
+    end
+
     def response
       Net::HTTP.get(uri)
+    end
+
+    def parsed_json
+      JSON.parse(raw)
     end
 
     def uri
