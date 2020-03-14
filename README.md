@@ -26,6 +26,22 @@ $ Covid::Nineteen.deaths
 $ Covid::Nineteen.recovered
 ```
 
+The data is structured as such:
+```
+$ pp Covid::Nineteen.confirmed
+[
+  {
+    "Province/State"=>nil,
+    "Country/Region"=>"Thailand",
+    "Lat"=>"15",
+    "Long"=>"101",
+    "1/22/20"=>"2",
+    "1/23/20"=>"3",
+    "1/24/20"=>"5"
+  },
+  { ... }
+]
+```
 
 ## Development
 
