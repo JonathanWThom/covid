@@ -9,15 +9,14 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jonathan Thom"]
   spec.email         = ["jonathan.thom1990@gmail.com"]
 
-  spec.summary       = ""
-  spec.description   = ""
+  spec.summary       = "JSON wrapper around Johns Hopkins COVID-19 dataset"
   spec.homepage      = "https://github.com/jonathanwthom/covid"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/jonathanwthom/covid"
