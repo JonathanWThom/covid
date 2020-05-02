@@ -3,7 +3,6 @@ name: Ruby Gem
 on:
   push:
     branches: [ master ]
-  pull_request:
   schedule:
     - cron: '0 16 * * Sat'
 
@@ -21,4 +20,5 @@ jobs:
 
     - name: Run smoke test
       run: |
-        bundle exec rake
+        bundle install
+        rake
