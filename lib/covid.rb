@@ -7,6 +7,25 @@ require "net/http"
 
 module Covid
   class Error < StandardError; end
+  class Result < Array
+    def country(name)
+      filter("Country/Region", name)
+    end
+
+    def state(name)
+      filter("Province/State", name)
+    end
+
+    alias_method :region, :country
+    alias_method :province, :state
+
+    private
+
+    def filter(key, name)
+      self.class.new(select { |result| result[key] == name })
+    end
+  end
+
   class Nineteen
     BASE_URI = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/"
     CONFIRMED = "time_series_covid19_confirmed_global.csv"
@@ -18,7 +37,7 @@ module Covid
     end
 
     def run
-      parsed_json
+      Result.new(parsed_json)
     end
 
     def self.confirmed

@@ -1,6 +1,6 @@
 # Covid
 
-JSON wrapper around [Johns Hopkins dataset](https://github.com/CSSEGISandData/COVID-19) for COVID-19.
+Ruby wrapper around [Johns Hopkins dataset](https://github.com/CSSEGISandData/COVID-19) for COVID-19.
 
 ## Installation
 
@@ -24,6 +24,16 @@ Or install it yourself as:
 $ Covid::Nineteen.confirmed
 $ Covid::Nineteen.deaths
 $ Covid::Nineteen.recovered
+```
+
+Any result can be filtered by country/region and/or state/province like so:
+```
+$ confirmed = Covid::Nineteen.confirmed
+$ confirmed.country("Australia")
+$ confirmed.region("Australia")
+$ confirmed.state("Victoria")
+$ confirmed.province("Victoria")
+$ confirmed.country("Australia").province("Victoria")
 ```
 
 The data is structured as such:
